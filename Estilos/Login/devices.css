@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+/* TABLET */
+
+@media screen and (min-width: 400px) and (max-width: 828px){
+
+    /* Cabeçalho */
+
+    span.search {
+        left: calc(100% - 40px - 25px);
+    }
+
+    /* Principal */
+
+}
+
+
+/* PC */
+
+@media screen and (min-width: 828px){
+
+    /* Cabeçalho */
+
+    span.search {
+        left: calc(100% - 40px - 25px);
+    }
+
+    /* Principal */
+
+    form.login {
+        margin: auto;
+        margin-top: 6em;
+        margin-bottom: 6em;
+        width: 550px;
+        height: 550px;
+        padding: 50px;
+        background-color: rgb(0, 0, 0);
+        box-shadow: inset 0px -1px 200px rgba(245, 245, 245, 0.349);
+    }
+
+    h2.login {
+        font-size: 40px;
+        color: rgb(252, 248, 243);
+    }
+
+    label.login {
+        background-color: #d0d0d0;
+    }
+
+    #senhaicon {
+        background-image: url(../../Imagens/lock_icon.png);
+    }
+
+    #usericon {
+        background-image: url(../../Imagens/user_icon.png);
+    }
+
+    input.login {
+        font-size: 18px;
+        background-color: white;
+    }
+
+    input#entrar, a#cadastrar {
+        font-size: larger;
+        background-color: #d0d0d0;
+        color: black;
+        font-weight: 600;
+    }
+
+    a#forgotpassword {
+        color: rgb(252, 248, 243);
+    }
+
+    input#entrar:hover, a#cadastrar:hover {
+        background-color: rgb(252, 248, 243);
+    }
+
+    /* Rodapé */
+
+    footer {
+        flex-direction: row;
+        height: 100px;
+        justify-content: center;
+        padding-right: 80px;
+    }
+
+    a.help, p.adress {
+        display: flex;
+        align-items: center;
+        align-self: center;
+    }
+
+    footer a.help::after, span.app::after, span.Fsocial::after {
+        content: '';
+        width: 1px;
+        height: 28px;
+        background-color: white;
+        margin-left: 1.5em;
+    }
+}

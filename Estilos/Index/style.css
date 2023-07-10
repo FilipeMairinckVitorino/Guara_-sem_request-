@@ -1,0 +1,438 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    font-family: 'Vollkorn', serif;
+    background-color: rgb(252, 248, 243);
+}
+
+/* Cabeçalho */
+
+header {
+    background-color: black;
+    height: 100px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0px -1px 90px rgba(245, 245, 245, 0.349);
+    position: relative;
+}
+
+a.logo {
+    width: 100px;
+    height: 90px;
+    background-image: url(../../Imagens/logo_branca.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    left: 10px;
+}
+
+span.menu {
+    width: 50px;
+    height: 28px;
+    display: flex;
+    position: absolute;
+    left: 6px;
+    background-image: url(../../Imagens/menu_invertido.png);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+menu {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    background-color: #d0d0d0;
+    height: 0px;
+    overflow: hidden;
+    transition-property: height;
+    transition-duration: 0.2s;
+}
+
+section.menu1 {
+    visibility: hidden;
+}
+
+section.menu3 {
+    visibility: hidden;
+    transform: translateY(5px);
+}
+
+/* 
+
+Menu
+    Total: 586px calc(2 * 15px + 12 * 28px + 22 * 10px)
+    Encolhido: 202px calc(4 * 28px + 6 * 10px + 2 * 15px)
+    Masculino ativo: 346px calc(2 * 15px + 7 * 28px + 12 * 10px)
+    Feminino ativo: 442px calc(2 * 15px + 9 * 28px + 16 * 10px)
+
+*/
+
+#firstmenu {
+    padding-top: 15px;
+}
+
+#lastmenu {
+    padding-bottom: 15px; 
+}
+
+.menu2,.menu4 {
+    display: flex;
+    flex-direction: column;
+    line-height: 28px;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-indent: 1em;
+    transition-property: height;
+    transition-duration: 0.2s;
+}
+
+.menu2:hover, .menu4:hover {
+    background-color: rgba(0, 0, 0, 0.068);
+}
+
+.menu2 {
+    overflow: hidden;
+}
+
+#masc {
+    height: 28px;
+}
+
+#fem {
+    height: 28px;
+}
+
+/* 
+
+Masc
+    Total: 172px -> calc(3 * 28px + 28px + 6 * 10px);
+    Encolhido: 28px
+
+Fem
+    Total: 268px -> calc(5 * 28px + 28px + 10 * 10px)
+    Encolhido: 28px
+
+*/
+
+.menu4 {
+    text-indent: 2em;
+    height: 28px;
+}
+
+span.search {
+    width: 40px;
+    height: 24px;
+    background-image: url(../../Imagens/lupa_invertida.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: calc(100% - 40px - 12px);
+    cursor: pointer;
+}
+
+input.search {
+    width: 100vw;
+    border: none;
+    height: 0px;
+    text-indent: 2em;
+    font-size: 16px;
+    display: block;
+    background-color: rgb(246, 253, 253);
+}
+
+input.search:focus {
+    background-color: rgb(235, 243, 243);
+    border: none;
+    outline: none;
+}
+
+section.overflowControl {
+    overflow-x: hidden;
+}
+
+section.anuncio {
+    min-height: 300px;
+    height: 500px;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+a.anuncio {
+    width: 100vw;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    transition-property: transform;
+    transition-duration: 1s;
+}
+
+/* Principal */
+
+main, section.secaoDeRoupas {
+    padding: 0.2em;
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+/* FILTRO */
+
+
+section.filtro {
+    display: flex;
+    width: 100%;
+}
+
+span.filtro {
+    display: flex;
+    height: 30px;
+    width: 30px;
+    background-image: url(../../Imagens/filter.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+section.options {
+    flex-wrap: wrap;
+    display: flex;
+    overflow: hidden;
+    width: 70%;
+    height: fit-content;
+    height: 100%;
+    align-items: center;
+}
+
+section.filterItem {
+    display: none;
+    margin: 5px 10px 5px 20px;
+    line-height: 19px;
+    font-size: 19px;
+}
+
+section.filterItem label {
+    text-indent: 8px;
+    user-select: none;
+}
+
+section.filterItem label::after{
+    content: '';
+    display: flex;
+    background-color: black;
+    position: relative;
+    right: 20px;
+    width: 0px;
+    height: 2px;
+    transition-property: width;
+    transition-duration: 0.2s;
+}
+
+section.filterItem:hover label::after {
+    transition-property: width;
+    transition-duration: 0.2s;
+    width: calc(100% + 22px);
+}
+
+section.filterItem input[type=checkbox] {
+    position: relative;
+    bottom: 2px;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background-color: rgba(0, 0, 0, 0.137);
+    box-sizing: border-box;
+}
+
+section.filterItem input[type=checkbox]:checked {
+    border: 5px solid #d0d0d0;
+    background-color: black;
+}
+
+
+/* ROUPAS */
+
+section.item {
+    /* background-image: url(../../Imagens/Produtos/basic_branca.png); */
+    width: 100vw;
+    height: 390px;
+    background-size: 220px;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    transition-property: background-size;
+    transition-duration: 0.2s;
+    white-space: nowrap;
+    margin: 0px 0px 2.5em 0px;
+}
+
+section.item h3 {
+    font-size: 40px;
+    position: absolute;
+    left: 10px;
+    bottom: calc(100% - 40px - 14px);
+    color: rgb(6, 28, 48);
+}
+
+section.item p {
+    font-size: 20px;
+    position: absolute;
+    left: 8px;
+}
+
+section.item h4 {
+    position: absolute;
+    bottom: 26px;
+    font-size: 26px;
+    left: 10px;
+}
+
+section.item a {
+    position: absolute;
+    left: 65%;
+    bottom: 12px;
+    color: rgb(6, 28, 48);
+    font-size: 28px;
+    text-decoration: none;
+}
+
+section.item a::after {
+    content: '';
+    position: absolute;
+    top: 36px;
+    right: 0px;
+    background-color: black;
+    width: 0px;
+    height: 2px;
+    transition-property: width;
+    transition-duration: 0.2s;
+}
+
+section.item:hover a::after {
+    width: 108px;
+    transition-property: width;
+    transition-duration: 0.2s;
+}
+
+/* Rodapé */
+
+footer {
+    background-color: black;
+    color: white;
+    display: flex;
+    position: relative;
+    bottom: 0;
+    padding: 1em 1em 1em 1em;
+    flex-direction: column;
+    font-size: 14.2px;
+    box-shadow: inset 0px -10px 200px  rgba(245, 245, 245, 0.220);
+}
+
+span.Flogo {
+    margin: 0px;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    align-self: flex-end;
+    height: 60px;
+    width: 60px;
+    background-image: url(../../Imagens/logo_branca.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+footer span {
+    margin: 1em;
+}
+
+a.help {
+    margin: 1em;
+    color: white;
+    text-decoration: none;
+    display: flex;
+}
+
+span.app, span.Fsocial {
+    display: flex;
+    align-items: center;
+}
+
+a.app, a.Fsocial {
+    margin: 0em 0em 0em 1.5em;
+    display: block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+a.app {
+    height: 30px;
+    width: 30px;
+}
+
+#android {
+    background-image: url(../../Imagens/android_logo.png);
+}
+
+#ios {
+    background-image: url(../../Imagens/ios_logo.png);
+}
+
+a.Fsocial {
+    height: 25px;
+    width: 25px;
+}
+
+#whatsapp {
+    background-image: url(../../Imagens/Whatsapp_logo.png);
+}
+
+#instagram {
+    background-image: url(../../Imagens/Instagram_logo.png);
+}
+
+p.adress {
+    margin: 1em;
+    display: flex;
+}
+
+p.Flogo {
+    display: flex;
+    align-self: flex-end;
+    top: 92%;
+    right: 6px;
+    font-size: 8px;
+    position: absolute;
+}
